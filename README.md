@@ -5,7 +5,7 @@ http://www.haxkur.tk/   http://www.haxkur.tk/2018/01/06zcat.html
 
 
 Zcat is a formidable tool for the creation of undetectable 
-backdoors developed in python. In a scrtip that allows us 
+backdoors developed in bash. In a scrtip that allows us 
 o generate an executable file. 
 The reverse way we can have a secure connection against a victim.
 This tool also has an excellent module to listen to the host victim.
