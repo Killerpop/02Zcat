@@ -143,12 +143,12 @@ echo -e '\e[0;31m***********ERROR***********\e[0m'
 exit
 fi
 
-echo "**********************************************************************************" 
-echo "*     1-  Meterpreter_Reverse_tcp		   5- Shell_reverse_tcp          *"
-echo "*     2-  Meterpreter_Reverse_http		   6- Powershell_reverse_tcp     *"
-echo "*     3-  Meterpreter_Reverse_https		   7- Multi encode payload       *"
-echo "*     4-  Meterpreter_Reverse_tcp_dns                                            *"
-echo "**********************************************************************************" 
+echo -e '\e[0;31m**********************************************************************************\e' 
+echo -e '\e[0;31m*     1-  Meterpreter_Reverse_tcp		   5- Shell_reverse_tcp          *\e'
+echo -e '\e[0;31m*     2-  Meterpreter_Reverse_http		   6- Powershell_reverse_tcp     *\e'
+echo -e '\e[0;31m*     3-  Meterpreter_Reverse_https		   7- Multi encode payload       *\e'
+echo -e '\e[0;31m*     4-  Meterpreter_Reverse_tcp_dns                                            *\e'
+echo -e '\e[0;31m**********************************************************************************\e'
 echo ""
 echo -e "\e[0;31m02Zcat\e[0m =>  \c"
 read option
