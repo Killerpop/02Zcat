@@ -150,7 +150,7 @@ echo "*     3-  Meterpreter_Reverse_https		   7- Multi encode payload       *"
 echo "*     4-  Meterpreter_Reverse_tcp_dns                                            *"
 echo "**********************************************************************************" 
 echo ""
-echo -e "Check the Option: \c"
+echo -e " $$$$$$$ =>  \c"
 read option
 
 #Aukeratu 
@@ -200,7 +200,7 @@ esac
 
 #Ip
 if [ "$option" == "4" ]; then
-echo -e "Set No-Ip Host: \c"
+echo -e "Set No-Ip Host =>  \c"
 read host
 fi
 
