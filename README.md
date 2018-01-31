@@ -4,7 +4,7 @@ http://www.haxkur.tk/   http://www.haxkur.tk/2018/01/06zcat.html
 # 02Zcat By: @Killerpop
 
 
-Zcat is a formidable tool for the creation of undetectable 
+02Zcat is a formidable tool for the creation of undetectable 
 backdoors developed in bash. In a scrtip that allows us 
 o generate an executable file. 
 The reverse way we can have a secure connection against a victim.
