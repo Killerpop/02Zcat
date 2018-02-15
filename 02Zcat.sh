@@ -31,7 +31,7 @@ mkdir $dir/handler
 
 bar ()
 {
-BAR='*******************************************'    
+BAR='<*******************************************>'    
                          
 for i in {1..35}; do
     echo -ne "\r${BAR:0:$i}" 
@@ -87,20 +87,20 @@ else
 fallocate='0'
 fi 
 
-echo -n Dependencies = =;
+echo -n ===============> =;
 
 
 sleep 3 & while [ "$(ps a | awk '{print $1}' | grep $!)" ] ; do for X in '-' '\' '|' '/'; do echo -en "\b$X"; sleep 0.1; done; done 
 if [ "$msfconsole" == "1" ] && [ "$msfvenom" == "1" ] && [ "$mono" == "1" ] && [ "$mcs" == "1" ] && [ "$postgresql" == "1" ] && [ "$fallocate" == "1" ]; then
-echo -en "\b \e[1;33mAll Ok\e[0m" 
+echo -en "\b \e[1;33m100% Full\e[0m" 
 echo ""
 echo ""
-echo -e '\e[0;31mmsfconsole\e[0m........\e[1;33mOk\e[0m'
-echo -e '\e[0;31mmsfvenom\e[0m..........\e[1;33mOk\e[0m'
-echo -e '\e[0;31mmono\e[0m..............\e[1;33mOk\e[0m'
-echo -e '\e[0;31mmsc\e[0m...............\e[1;33mOk\e[0m'
-echo -e '\e[0;31mpostgresql\e[0m........\e[1;33mOk\e[0m'
-echo -e '\e[0;31mfallocate\e[0m.........\e[1;33mOk\e[0m'
+echo -e '\e[0;31mmsfconsole\e[0m========>\e[1;33mOk\e[0m'
+echo -e '\e[0;31mmsfvenom\e[0m==========>\e[1;33mOk\e[0m'
+echo -e '\e[0;31mmono\e[0m==============>\e[1;33mOk\e[0m'
+echo -e '\e[0;31mmsc\e[0m===============>\e[1;33mOk\e[0m'
+echo -e '\e[0;31mpostgresql\e[0m========>\e[1;33mOk\e[0m'
+echo -e '\e[0;31mfallocate\e[0m=========>\e[1;33mOk\e[0m'
 
 echo ""
 sleep 2
@@ -139,12 +139,15 @@ echo -e '\e[0;31m***********ERROR***********\e[0m'
 exit
 fi
 
-echo -e '\e[0;31m**********************************************************************************\e' 
-echo -e '\e[0;31m*     1-  Meterpreter_Reverse_tcp		   5- Shell_reverse_tcp          *\e'
-echo -e '\e[0;31m*     2-  Meterpreter_Reverse_http		   6- Powershell_reverse_tcp     *\e'
-echo -e '\e[0;31m*     3-  Meterpreter_Reverse_https		   7- Multi encode payload       *\e'
-echo -e '\e[0;31m*     4-  Meterpreter_Reverse_tcp_dns                                            *\e'
-echo -e '\e[0;31m**********************************************************************************\e'
+echo -e '\e[0;31m*******************************************\e' 
+echo -e '\e[0;31m*     1-  Meterpreter_Reverse_tcp         *\e'
+echo -e '\e[0;31m*     2-  Meterpreter_Reverse_http	  *\e'
+echo -e '\e[0;31m*     3-  Meterpreter_Reverse_https	  *\e'
+echo -e '\e[0;31m*     4-  Meterpreter_Reverse_tcp_dns     *\e'
+echo -e '\e[0;31m*     5-  Shell_reverse_tcp               *\e'
+echo -e '\e[0;31m*     6-  Powershell_reverse_tcp          *\e'
+echo -e '\e[0;31m*     7-  Multi encode payload            *\e'
+echo -e '\e[0;31m*******************************************\e'
 echo ""
 echo -e "\e[0;31m02Zcat\e[0m =>  \c"
 read option
