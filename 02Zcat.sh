@@ -5,7 +5,7 @@ cat << !
 ───────────────────────▄▄──█░░░░░░░░░░░█──▄▄
 ──────────────────────█▄▄█─█░░▀░░┬░░▀░░█─█▄▄█ 02Zcat
                                      0.2Zcat backdoor generator
-                                     By: @Killerpop https://www.haxkur.tk/
+                                     By: @Killerpop http://www.haxkur.ml/
 !
 
 echo -e '     \e[0;31mWARNING\e[0m'
