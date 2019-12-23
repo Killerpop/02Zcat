@@ -1,4 +1,4 @@
-<img src="https://3.bp.blogspot.com/-gzU03sGO4tE/XK4LjnrQTZI/AAAAAAAABH8/fYo3C6sfetcj-nd1LzNOVYJfDolQ9VT4wCK4BGAYYCw/s600/logohaxkur01.png" />
+<img src="https://1.bp.blogspot.com/-EkUHTqUCQ3Y/XdI1qZjrR1I/AAAAAAAABc8/aDjXNBNCMRAvLGu-dpW8XepYyy_-YRVvACK4BGAYYCw/s792/cubo-logo-new-no-back-1024x905.png" />
 http://www.haxkur.ml/   http://www.haxkur.ml/2018/02/02zcat.html
 
 # 02Zcat By: @Killerpop
