@@ -1,5 +1,5 @@
-<img src="https://1.bp.blogspot.com/-EkUHTqUCQ3Y/XdI1qZjrR1I/AAAAAAAABc8/aDjXNBNCMRAvLGu-dpW8XepYyy_-YRVvACK4BGAYYCw/s792/cubo-logo-new-no-back-1024x905.png" />
-http://www.haxkur.ml/   http://www.haxkur.ml/2018/02/02zcat.html
+<img src="https://1.bp.blogspot.com/-lV0q_RogHz0/XyhioZEr6yI/AAAAAAAACog/aUBE3KRem1IA3y03-I5sYSLCWA_ZsHJcwCLcBGAsYHQ/s640/dfbcbdf.png" />
+http://www.greyhelmet.ml/   https://www.greyhelmet.ml/2018/02/02zcat.html
 
 # 02Zcat By: @Killerpop
 
@@ -26,4 +26,4 @@ Commands:
 	chmod +x 02Zcat.sh
 	sudo ./02Zcat.sh
 
-                          By: Staff Haxk.Ur
+                          By: Staff GreyHelmet SEc
