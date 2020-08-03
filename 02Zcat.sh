@@ -5,14 +5,14 @@ cat << !
 ───────────────────────▄▄──█░░░░░░░░░░░█──▄▄
 ──────────────────────█▄▄█─█░░▀░░┬░░▀░░█─█▄▄█ 02Zcat
                                      0.2Zcat backdoor generator
-                                     By: @Killerpop https://www.haxkur.ml/
+                                     By: gZaballa (Killerpop) https://www.greyhelmet.ml/
 !
 
 echo -e '     \e[0;31mWARNING\e[0m'
 cat << !
       This tool is created for didactic purposes and not to commit a crime. 
       Haxk.Ur does not take care of any malicious use of the tool. 
-      We recommend the use in a controlled laboratory.       By Staff Haxk.Ur
+      We recommend the use in a controlled laboratory.       By Staff GreyHelmet SEC
 
 !
 sleep 2
